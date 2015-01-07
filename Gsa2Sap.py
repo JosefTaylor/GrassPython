@@ -16,9 +16,6 @@ def Main(geometry):
 	SectionTable(secName)
 
 
-#I'M JUST ADDING THIS COMMENT TO SEE WHAT HAPPENS WHEN GITGUBGLUBGUB
-
-
 def GetSectionName( secString ):
 
 	try:
