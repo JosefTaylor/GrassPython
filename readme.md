@@ -2,6 +2,10 @@
 
 This repository is a collection of scripts for Rhino and Grasshopper.
 
+##Convert Units##
+
+A GH User object which converts units from SI to US Customary units.
+
 ##PulloutCones_AppD##
 
 An ACI 318 Appendix D calculation for anchors in concrete. Like Hilti ProFis, but for weirder geometry.
@@ -17,3 +21,4 @@ Extracts centerlines from extrusion-ish objects. At the moment, only works on ob
 ##AreaTag##
 
 Another stupid thing.
+

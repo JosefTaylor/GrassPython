@@ -1,0 +1,89 @@
+# English units expressed as SI
+inch = .0254 # meters
+pound = 4.44822 # Newtons
+slug = 14.5939 # kilograms
+Rankine = 0.5555556 # Kelvin
+candlepower = 0.981 # candelas
+
+def newton_to_pound(number):
+    num_out = float(number) / pound
+    unit = "pound"
+    return([num_out, unit])
+
+def kilogram_to_slug(number):
+    num_out = float(number) / slug
+    unit = "slug"
+    return([num_out, unit])
+
+def meter1_to_inch1(number):
+    num_out = float(number) / inch
+    unit = "inch"
+    return([num_out, unit])
+
+def meter2_to_inch2(number):
+    num_out = float(number) / inch**2
+    unit = "inch^2"
+    return([num_out, unit])
+
+def meter3_to_inch3(number):
+    num_out = float(number) / inch**3
+    unit = "inch^3"
+    return([num_out, unit])
+
+def Pa_to_psi(number):
+    num_out = float(number) / ( pound / inch / inch )
+    unit = "psi"
+    return([num_out, unit])
+
+def NewtonMeter_to_PoundInch(number):
+    num_out = float(number) / ( pound * inch )
+    unit = "lb-in"
+    return([num_out, unit])
+
+def Ampere_to_Ampere(number):
+    num_out = float(number)
+    unit = "Ampere"
+    return([num_out, unit])
+
+def Kelvin_to_Rankine(number):
+    num_out = float(number) / Rankine
+    unit = "Rankine"
+    return([num_out, unit])
+
+def mol_to_mol(number):
+    num_out = float(number)
+    unit = "mol"
+    return([num_out, unit])
+
+def candela_to_candlepower(number):
+    num_out = float(number) / candlepower
+    unit = "candlepower"
+    return([num_out, unit])
+
+unit_dict = {
+"N"   : newton_to_pound,
+"Newton"   : newton_to_pound,
+"kg"  : kilogram_to_slug,
+"kilogram"  : kilogram_to_slug,
+"m"   : meter1_to_inch1,
+"meter"   : meter1_to_inch1,
+"m^2" : meter2_to_inch2,
+"meter^2" : meter2_to_inch2,
+"square meter" : meter2_to_inch2,
+"m^3" : meter3_to_inch3,
+"meter^3" : meter3_to_inch3,
+"cubic meter" : meter3_to_inch3,
+"Pa"  : Pa_to_psi,
+"N/m^2"  : Pa_to_psi,
+"N-m" : NewtonMeter_to_PoundInch,
+"A"   : Ampere_to_Ampere,
+"Ampere"   : Ampere_to_Ampere,
+"K"   : Kelvin_to_Rankine,
+"mol" : mol_to_mol,
+"candela" : candela_to_candlepower
+}
+
+try:
+    [N, U] = unit_dict[U](N)
+except Exception as ex:
+    print "Unit not recognized"
